@@ -15,3 +15,13 @@ creating a new file to test some onchain activities.
 second copu pasted content,no use.
 second copy pasted content,no use.
 second copy pasted content,no use.
+const result = await fetch('https://mainnet.base.org', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        method: 'eth_call',
+        params: [{ to: CONTRACT_ADDRESS, data }, 'latest'],
+        id: 1
+      })
+    }).then(r => r.json()).then(r => r.result);
